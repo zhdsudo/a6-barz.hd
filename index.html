@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Praktika</title>
+    <script type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style type="text/css">
+	.progress-btn{
+		display: flex;
+		justify-content: center;
+	}
+	.btn{
+		margin: 20px
+	}
+	.progress{
+		margin-top: 200px
+	}
+
+</style>
+<body>
+<div class="container">  	
+	<div class="progress" style="height: 30px;">
+	<div id="my-progress-bar" class="progress-bar progress-bar-striped bg-success"  role="progressbar" style="width:0%"></div>
+	</div>
+	<div class="progress-btn">
+	 <button type="button" class="btn btn-dark" >+1%</button>
+	 <button type="button" class="btn btn-light">+3%</button>
+	 <button type="button" class="btn btn-warning">+7%</button>	
+	</div>
+</div>  
+<script>
+"use strict";
+    let w = 0;
+	$('.btn-dark').on('click', function() {
+		if (w < 100){
+        w = w + 1
+        return($("#my-progress-bar").width(`${w}%`), $("#my-progress-bar").text(`${w}%`))
+        }
+        
+});
+	$('.btn-light').on('click', function() {
+		if (w <= 97){
+        w = w + 3
+        return($("#my-progress-bar").width(`${w}%`), $("#my-progress-bar").text(`${w}%`))
+        }
+        
+});
+
+	$('.btn-warning').on('click', function() {
+		if (w <= 93){
+        w = w + 7
+        return($("#my-progress-bar").width(`${w}%`), $("#my-progress-bar").text(`${w}%`))
+        }    
+        
+});	
+    
+
+</script>
+</body>
+</html>
